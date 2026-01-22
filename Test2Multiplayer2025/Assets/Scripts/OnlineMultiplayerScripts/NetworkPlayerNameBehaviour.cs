@@ -1,10 +1,11 @@
 using UnityEngine;
 using Unity.Netcode;
 using TMPro;
+using Unity.Collections;
 
 public class NetworkPlayerNameBehaviour : NetworkBehaviour
 {
-    public NetworkVariable<string> NetworkPlayerName = new NetworkVariable<string>();
+    NetworkVariable<FixedString64Bytes> NetworkPlayerName = new NetworkVariable<FixedString64Bytes>();
     public string PlayerName;
     public TMP_Text TargetText;
 
@@ -18,7 +19,9 @@ public class NetworkPlayerNameBehaviour : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        TargetText.text = NetworkPlayerName.Value;
+        PlayerName = NetworkPlayerName.Value.ToString();
+    
+        TargetText.text = PlayerName;
     }
 
     public void SetPlayerName(string inPlayerName)
@@ -30,8 +33,5 @@ public class NetworkPlayerNameBehaviour : NetworkBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        GameManager.Singleton.InstancedPlayerNameBehaviour.Remove(this);
-    }
+   
 }
