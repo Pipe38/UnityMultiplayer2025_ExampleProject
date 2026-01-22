@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3174774922779147411}
   - component: {fileID: 5283155081226422538}
   - component: {fileID: 1515099014233309619}
+  - component: {fileID: 6507597725551214821}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -213,6 +214,23 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   PlayerColor: {r: 0, g: 0, b: 0, a: 0}
   PlayerRenderer: {fileID: 4230137517578801614}
+--- !u!114 &6507597725551214821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176572733352339076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e56d029fc5e764a82460219dda5dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkPlayerName:
+    m_InternalValue: 
+  PlayerName: 
+  TargetText: {fileID: 4621437352506077956}
 --- !u!1 &3638237145235632296
 GameObject:
   m_ObjectHideFlags: 0
