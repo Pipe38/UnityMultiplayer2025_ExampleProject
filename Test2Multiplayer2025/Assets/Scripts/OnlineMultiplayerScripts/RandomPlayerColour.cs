@@ -3,7 +3,7 @@ using Unity.Netcode;
 
 public class RandomPlayerColour : NetworkBehaviour
 {
-    NetworkVariable<Color> NetworkPlayerColor = new NetworkVariable<Color>();
+    NetworkVariable<Color> NetworkPlayerColor = new NetworkVariable<Color>(Color.black, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public Color PlayerColor;
     public Renderer PlayerRenderer;
 

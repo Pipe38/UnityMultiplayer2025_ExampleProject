@@ -5,7 +5,7 @@ using Unity.Collections;
 
 public class NetworkPlayerNameBehaviour : NetworkBehaviour
 {
-    NetworkVariable<FixedString64Bytes> NetworkPlayerName = new NetworkVariable<FixedString64Bytes>();
+    NetworkVariable<FixedString64Bytes> NetworkPlayerName = new NetworkVariable<FixedString64Bytes>("", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public string PlayerName;
     public TMP_Text TargetText;
 
@@ -13,6 +13,7 @@ public class NetworkPlayerNameBehaviour : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         GameManager.Singleton.InstancedPlayerNameBehaviour.Add(this);
     }
 
